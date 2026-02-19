@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FKST_tech est une boutique de technologie dans laquelle vous trouverez touts vos differents articles concernant l'informatique." />
+    <meta content="FKST_tech" property="og:title" />
+    <title>FKST_tech</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        text-align: center;
+        background-image: url("arriereplan.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #1a1a2e;
+    }
+    
+    header {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.5s;
+        font-size: x-large;
+    }
+    
+    nav li:hover {
+        color: #00bfff;
+        transform: scale(1.1);
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav a:hover {
+        color: #00bfff;
+    }
+    
+    div {
+        background: rgba(0, 0, 0, 0.5);
+        margin: 60px auto;
+        padding: 50px;
+        width: 85%;
+        max-width: 1400px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        font-size: 2em;
+        color: #00bfff;
+    }
+    
+    h2 {
+        color: #00bfff;
+    }
+    
+    p {
+        font-size: 1.1em;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    ol {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .sams {
+        text-align: left;
+    }
+    
+    footer {
+        color: #00bfff;
+        padding: 20px;
+    }
+    
+    .v {
+        text-align: center;
+    }
+    
+    .utilisateur {
+        text-align: left;
+        font-size: large;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    input,
+    select,
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #00bfff;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    
+    input[type="checkbox"] {
+        width: auto;
+        margin: 0 5px;
+    }
+    
+    button {
+        padding: 10px 30px;
+        background: #00bfff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    button:hover {
+        background: #0099cc;
+        transform: scale(1.05);
+    }
+    
+    a {
+        color: #00bfff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Section Promotions */
+    
+    .promo-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+    /* FAQ Section */
+    
+    .faq-item {
+        background: rgba(255, 255, 255, 0.05);
+        margin: 15px 0;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #00bfff;
+        text-align: left;
+        transition: 0.3s;
+    }
+    
+    .faq-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(10px);
+    }
+    
+    .faq-question {
+        font-weight: bold;
+        color: #00bfff;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .faq-answer {
+        color: #ddd;
+        line-height: 1.6;
+    }
+    /* Google Maps */
+    
+    .map-container {
+        width: 100%;
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 20px 0;
+        box-shadow: 0 5px 20px rgba(0, 191, 255, 0.3);
+    }
+    /* Bouton WhatsApp flottant */
+    
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 100px;
+        right: 30px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 35px;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 2px 2px 25px rgba(37, 211, 102, 0.6);
+    }
+    /* Product Cards Améliorées */
+    
+    .product-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        transition: 0.3s;
+        border: 2px solid transparent;
+    }
+    
+    .product-card:hover {
+        border-color: #00bfff;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+    }
+    
+    .product-card img {
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+    /* Badges de stock */
+    
+    .stock-badge {
+        display: inline-block;
+        background: #4CAF50;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.9em;
+        margin: 10px 0;
+    }
+    /* Nouvelles sections */
+    
+    .info-box {
+        background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(0, 191, 255, 0.05));
+        border: 2px solid #00bfff;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .info-box h3 {
+        color: #00bfff;
+        margin-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            background-attachment: scroll;
+        }
+        header {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        nav ul {
+            gap: 15px;
+            padding: 0 10px;
+        }
+        nav li {
+            font-size: large;
+        }
+        div {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.3em;
+        }
+        p {
+            font-size: 1em;
+        }
+        .sams {
+            text-align: center;
+        }
+        .utilisateur {
+            text-align: center;
+            font-size: medium;
+        }
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            font-size: 28px;
+            bottom: 80px;
+            right: 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        nav ul {
+            gap: 10px;
+        }
+        nav li {
+            font-size: medium;
+        }
+        div {
+            width: 95%;
+            padding: 15px;
+            margin: 15px auto;
+        }
+        h1 {
+            font-size: 1.3em;
+        }
+    }
+    
+    .container-icones {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        justify-content: center !important;
+        background: transparent !important;
+        margin: 20px auto !important;
+        padding: 0 !important;
+        width: fit-content !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .container-icones img {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-block !important;
+        transition: 0.3s;
+    }
+    
+    .container-icones img:hover {
+        transform: scale(1.2);
+    }
+    /* Animation du logo - Version fluide et classe */
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        min-height: 500px;
+        position: relative;
+        width: 100%;
+        padding: 0 50px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .logo {
+        perspective: 1000px;
+        display: inline-block;
+        transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        position: relative;
+        margin-left: calc(60% - 200px);
+    }
+    
+    .logo.move-right {
+        margin-left: calc(100% - 450px);
+    }
+    
+    .logo img {
+        cursor: pointer;
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        filter: drop-shadow(0 5px 15px rgba(0, 191, 255, 0.3));
+        transform-style: preserve-3d;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .logo img:hover {
+        transform: translateY(-10px) scale(1.05);
+        filter: drop-shadow(0 15px 35px rgba(0, 191, 255, 0.6));
+    }
+    
+    .logo img:active {
+        transform: translateY(-5px) scale(1.02);
+        transition: all 0.1s ease;
+    }
+    
+    @keyframes breathe {
+        0%,
+        100% {
+            transform: scale(1);
+            filter: drop-shadow(0 5px 15px rgba(0, 191, 255, 0.3));
+        }
+        50% {
+            transform: scale(1.03);
+            filter: drop-shadow(0 8px 25px rgba(0, 191, 255, 0.5));
+        }
+    }
+    
+    .logo img.breathing {
+        animation: breathe 4s ease-in-out infinite;
+    }
+    
+    @keyframes float-rotate {
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg) scale(1);
+        }
+        25% {
+            transform: translateY(-15px) rotate(2deg) scale(1.02);
+        }
+        50% {
+            transform: translateY(-20px) rotate(0deg) scale(1.05);
+        }
+        75% {
+            transform: translateY(-15px) rotate(-2deg) scale(1.02);
+        }
+    }
+    
+    .logo img.floating-active {
+        animation: float-rotate 3s ease-in-out infinite;
+    }
+    
+    .logo img.breathing {
+        animation: breathe 4s ease-in-out infinite;
+    }
+    
+    .logo-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 191, 255, 0.2) 0%, transparent 70%);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .logo:hover .logo-glow {
+        opacity: 1;
+    }
+    /* Messages de motivation */
+    
+    .motivation-text {
+        position: absolute;
+        left: 30px;
+        transform: translateX(0);
+        font-size: 1.8em;
+        font-weight: bold;
+        background: linear-gradient(135deg, #00d2ff, #3a7bd5, #00d2ff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: gradient-flow 4s ease infinite;
+        text-align: left;
+        max-width: calc(100% - 550px);
+        filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.7));
+        white-space: nowrap;
+        overflow: visible;
+    }
+    
+    @keyframes gradient-flow {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .motivation-text.show {
+        animation: slideInOut 3s ease-in-out;
+    }
+    
+    @keyframes slideInOut {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px) scale(0.8);
+        }
+        15% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        85% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100px) scale(0.8);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .logo-container {
+            padding: 0 20px;
+            min-height: 300px;
+        }
+        .logo {
+            margin-left: calc(50% - 125px);
+        }
+        .logo.move-right {
+            margin-left: calc(100% - 270px);
+        }
+        .motivation-text {
+            font-size: 1.1em;
+            left: 20px;
+            max-width: calc(100% - 310px);
+            line-height: 1.4;
+        }
+        .logo img {
+            max-width: 250px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .logo-container {
+            padding: 0 15px;
+            min-height: 250px;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .logo {
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .logo.move-right {
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+        .motivation-text {
+            font-size: 1.2em;
+            left: 15px;
+            right: 15px;
+            max-width: calc(100% - 30px);
+            white-space: normal;
+            line-height: 1.5;
+            text-align: center;
+            position: relative;
+        }
+        .logo img {
+            max-width: 200px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#promo">Promotions</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/message/QKZAA3D4BLTTP1" class="whatsapp-float" target="_blank" title="Contactez-nous sur WhatsApp">
+        💬
+    </a>
+
+    <main>
+        <section id="accueil">
+            <div>
+                <h1> BIENVENUE CHEZ <b> FKST_tech</b> </h1>
+                <figure>
+                    <div class="logo-container">
+                        <section class="logo">
+                            <div class="logo-glow"></div>
+                            <img src="WhatsApp Image 2026-02-18 at 10.23.32 PM.jpeg" alt="logo FKST_tech" />
+                        </section>
+                    </div>
+                    <em> <figcaption>Logo de la marque FKST_tech.</figcaption> </em>
+                </figure>
+            </div>
+
+            <!-- Nouvelle section Info -->
+            <div class="info-box">
+                <h3>🎉 Offre Spéciale du Moment !</h3>
+                <p>Profitez de nos promotions sur une sélection d'articles tech. Livraison gratuite à partir de 20 000 FCFA !</p>
+            </div>
+
+            <div>
+                <h2>PLUS D'INFOS SUR VOUS !</h2>
+                <section class="utilisateur">
+                    <form action="">
+                        <p><label>
+                Nom :
+                <input type="text" />
+                </label></p>
+                        <p>
+                            <label>
+                    Prenom :
+                    <input type="text"/>
+                  </label>
+                        </p>
+                        <p>
+                            <label>Avez vous plus de 18 ans ? :
+                          Oui<input type="checkbox"> Non <input type="checkbox">
+                          </label>
+                        </p>
+                        <p>
+                            <label>Date de Naissance :</label>
+                            <input type="date" />
+                        </p>
+                        <p>
+                            <label for="tel">Telephone :</label>
+                            <input type="tel" id="tel" placeholder="Ex. (+225)00-00-00-00-00" />
+                        </p>
+                        <p>
+                            <label for="email"> Email : </label>
+                            <input type="email" id="email" placeholder="Ex. example@email.com" />
+                        </p>
+                        <p>
+                            <center> <button type="submit">Submit form </button> </center>
+                        </p>
+                    </form>
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <h2>C'EST QUOI FKST_tech ?</h2>
+                    <p>FKST_tech est une boutique de technologie dans laquelle vous trouverez touts vos differents articles concernant l'informatique. Elle a ete cree par<b><i lang="fr"> FIEGNY KOUAKOU SAMS TRESOR</i></b> en Aout 2025.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section Promotions -->
+    <section id="promo">
+        <div>
+            <h2>🔥 PROMOTIONS & NOUVEAUTÉS</h2>
+
+            <div class="product-card">
+                <span class="promo-badge">-15% PROMO</span>
+                <p><strong>Pack Étudiant</strong></p>
+                <p>Clé USB 128Go + Stylo USB = <s>12700 FCFA</s> <strong style="color: #4CAF50;">10800 FCFA</strong></p>
+                <span class="stock-badge">En stock</span>
+            </div>
+
+            <div class="product-card">
+                <span class="promo-badge">NOUVEAU</span>
+                <p><strong>Écouteurs KZ PRO X</strong></p>
+                <p>Nouvelle version améliorée avec meilleure isolation</p>
+                <p><strong>7500 FCFA</strong></p>
+                <span class="stock-badge">En stock</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section id="faq">
+        <div>
+            <h2>❓ QUESTIONS FRÉQUENTES (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">📦 Quels sont les modes de paiement acceptés ?</div>
+                <div class="faq-answer">Nous acceptons les paiements en espèces, Wave, Mobile Money (Orange Money, MTN Money, Moov Money) et virement bancaire.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🚚 Faites-vous la livraison ?</div>
+                <div class="faq-answer">Oui ! Nous livrons dans tout Abidjan. Livraison gratuite à partir de 20 000 FCFA d'achat. Délai de livraison : 24 à 48h.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">✅ Y a-t-il une garantie sur les produits ?</div>
+                <div class="faq-answer">Tous nos produits sont garantis 3 mois contre les défauts de fabrication. Échange possible sous 7 jours si le produit est défectueux.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🕐 Quels sont vos horaires d'ouverture ?</div>
+                <div class="faq-answer">Nous sommes ouverts du Lundi au Samedi de 8h à 19h, et le Dimanche de 10h à 17h.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">💬 Comment passer commande ?</div>
+                <div class="faq-answer">Vous pouvez commander via WhatsApp, nous appeler directement, ou venir en boutique. Nous répondons rapidement à tous les messages !</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔄 Puis-je retourner un produit ?</div>
+                <div class="faq-answer">Oui, retour possible sous 7 jours si le produit est dans son emballage d'origine et non utilisé (sauf défaut).</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div>
+            <section>
+                <address>
+          <h2>📍 OÙ TROUVER FKST_tech ?</h2>
+          <P>
+            FKST_tech se situe a COCODY RIVIERA 4 SOL-BENI non loin de la clinique <q>SAINT PIERRE LEGRAND</q>.<br />
+            Vous pouvez nous contactez par
+          </p> 
+          <p>📞 Telephone: <a href="tel:+2250595505402">+225 05-95-50-54-02</a> / <a href="tel:+2250152566067">+225 01-52-56-60-67</a></p>  
+          <p>📧 Email: <a href="mailto:fksttech@gmail.com">fksttech@gmail.com</a></p>  
+          </address>
+
+                <!-- Google Maps -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.4286827663373!2d-3.9863176!3d5.3599897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ec36d5ceb4a7%3A0x3c6a9cf4b0e4b8f0!2sRiviera%204%2C%20Abidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1234567890"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section id="articles">
+        <div>
+            <h2>🛒 QUELQUES ARTICLES DISPONIBLE DANS LA BOUTIQUE</h2>
+            <ol>
+                <div class="product-card">
+                    <em> <li> <p>Cle USB otg violet 3en1 (128GO) <a href="https://yango.com/shopping/safedeal/13e31ccc-5efb-46e2-b536-ea5738e3684b" target="_blank">6500Fcfa</a> </p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/13e31ccc-5efb-46e2-b536-ea5738e3684b" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/12895787/f32c5061-4fbb-4b4f-829e-e7f1c67c8f98/1200x1200" alt="cle usb otg 1">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <em> <li> <p>Cle USB otg grise 3en1 (128GO) <a href="https://yango.com/shopping/safedeal/34ac9357-d1f9-45ab-8cde-60db5621b695" target="_blank">6500Fcfa</a> </p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/34ac9357-d1f9-45ab-8cde-60db5621b695" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/13018142/d06756ac-86db-47b7-929a-cf80e58388eb/1200x1200" alt="cle usb otg 2">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <em> <li> <p>Cle USB gueeton noir 3en1 (128GO) <a href="https://yango.com/shopping/safedeal/f5290a4a-2348-442e-8b85-49e3416192fa" target="_blank">6500Fcfa</a> </p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/f5290a4a-2348-442e-8b85-49e3416192fa" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/13018142/c7ae235d-448c-494c-83d5-393c999a3f90/1200x1200" alt="cle usb otg 3">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <em> <li> <p>Stylo a bille avec 4 ancre de recharche (128GO) <a href="https://yango.com/shopping/safedeal/fae972ce-cea3-4b58-a207-9eee093ba10a" target="_blank">6200Fcfa</a> </p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/fae972ce-cea3-4b58-a207-9eee093ba10a" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/12821751/bf0c664b-ac21-478a-b44b-430ec902a30d/1200x1200" alt="stylo cle usb">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <em> <li> <p>Cle USB otg 128GO_Cle tv 16GO <a href="https://yango.com/shopping/safedeal/75d06e3a-95d7-4411-98bb-01ca0728caaa" target="_blank">8300Fcfa</a></p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/75d06e3a-95d7-4411-98bb-01ca0728caaa" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/12821751/f9fa6344-0b3e-4093-a4f6-b45f5c8e88b1/1200x1200" alt="cle usb double">
+                    </a>
+                </div>
+
+                <div class="product-card">
+                    <em> <li> <p>Ecouteur KZ PRO original <a href="https://yango.com/shopping/safedeal/ac88b25f-9a8f-4160-8c52-eb5b23ea11c7" target="_blank">7500Fcfa</a></p> </li> </em>
+                    <span class="stock-badge">En stock</span>
+                    <a href="https://yango.com/shopping/safedeal/ac88b25f-9a8f-4160-8c52-eb5b23ea11c7" target="_blank">
+                        <img src="https://avatars.mds.yandex.net/get-yango-marketplace/12824483/d95a6848-0485-499d-bb04-faf88ea69fa5/1200x1200" alt="ecouteur KZ PRO">
+                    </a>
+                </div>
+            </ol>
+        </div>
+    </section>
+
+    <div class="sams">
+        <section class="v">
+            <h2>VISITEZ MA BOUTIQUE !</h2>
+        </section>
+        <ul>
+            <li>
+                <p> Rdv sur ma <a href="http://buy.yango.com/store/fkst_tech" target="_blank">boutique yango</a>,</p>
+            </li>
+
+            <li>
+                <p> Abonnez vous a mon <a href="https://www.tiktok.com/@fkst_7?_t=ZN-8zmMoqGtVcU&_r=1" target="_blank">Compte tiktok</a> pour ne pas manquer mes differents posts,</p>
+            </li>
+
+            <li>
+                <p> Abonnez vous a mon <a href="https://www.facebook.com/share/16xxQLXozv/" target="_blank">Compte facebook</a> pour ne pas manquer mes differents posts,
+                </p>
+            </li>
+
+            <li>
+                <p> Laissez moi un message en prive sur mon <a href="https://wa.me/message/QKZAA3D4BLTTP1" target="_blank">Compte WhatsApp</a>.</p>
+            </li>
+        </ul>
+    </div>
+</body>
+<footer>
+    <p> © 2025 Nova Minds Hub. All rights reserved. - <a href="http://buy.yango.com/store/fkst_tech">FKST_tech</a> </p>
+    <div class="container-icones">
+        <a href="http://buy.yango.com/store/fkst_tech" target="_blank"> <img src="https://play-lh.googleusercontent.com/ou3Sn39oI0wNtpIaC4cN57erJYVMSb_8_ABi1zsM-xYPIHex3SLeCBTDo-xojQEs_nQ" alt="icone yango" width="32" height="32" class="icone" /> </a>
+        <a href="https://www.tiktok.com/@fkst_7?_t=ZN-8zmMoqGtVcU&_r=1" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png" alt="icone tiktok" width="32" height="32" class="icone" /> </a>
+        <a href="https://www.facebook.com/share/16xxQLXozv/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png" alt="icone facebook" width="32" height="32" class="icone" /> </a>
+        <a href="https://wa.me/message/QKZAA3D4BLTTP1" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/16566/16566143.png" alt="icone WhatsApp" width="32" height="32" class="icone" /> </a>
+
+    </div>
+</footer>
+<script>
+    // ===== 1. SCROLL SMOOTH POUR LA NAVIGATION =====
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ===== 2. VALIDATION DU FORMULAIRE =====
+    const form = document.querySelector('form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const telInput = form.querySelector('input[type="tel"]');
+
+    // Formatage automatique du numéro de téléphone
+    telInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Garde seulement les chiffres
+
+        // Limite à 13 chiffres (225 + 10 chiffres)
+        if (value.length > 13) {
+            value = value.slice(0, 13);
+        }
+
+        let formatted = '';
+
+        if (value.length > 0) {
+            // Ajoute (+225)
+            if (value.startsWith('225')) {
+                formatted = '(+225)';
+                value = value.slice(3);
+            } else if (value.length <= 3) {
+                formatted = '(+' + value;
+                e.target.value = formatted;
+                return;
+            } else {
+                // Si ne commence pas par 225, on l'ajoute
+                formatted = '(+225)';
+            }
+
+            // Formate le reste: XX-XX-XX-XX-XX
+            if (value.length > 0) formatted += value.slice(0, 2);
+            if (value.length > 2) formatted += '-' + value.slice(2, 4);
+            if (value.length > 4) formatted += '-' + value.slice(4, 6);
+            if (value.length > 6) formatted += '-' + value.slice(6, 8);
+            if (value.length > 8) formatted += '-' + value.slice(8, 10);
+        }
+
+        e.target.value = formatted;
+    });
+
+    // Placeholder pour guider l'utilisateur
+    telInput.placeholder = '(+225)00-00-00-00-00';
+
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Récupération des valeurs
+        const nom = form.querySelectorAll('input[type="text"]')[0].value.trim();
+        const prenom = form.querySelectorAll('input[type="text"]')[1].value.trim();
+        const dateNaissance = form.querySelector('input[type="date"]').value;
+        const telephone = form.querySelector('input[type="tel"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+
+        // Validation
+        let erreurs = [];
+
+        if (!nom) erreurs.push('- Le nom est obligatoire');
+        if (!prenom) erreurs.push('- Le prénom est obligatoire');
+        if (!dateNaissance) erreurs.push('- La date de naissance est obligatoire');
+        if (!telephone) erreurs.push('- Le téléphone est obligatoire');
+        if (!email) erreurs.push('- L\'email est obligatoire');
+        else if (!email.includes('@')) erreurs.push('- L\'email n\'est pas valide');
+
+        // Vérifier qu'une seule checkbox est cochée
+        const checkboxesChecked = Array.from(checkboxes).filter(cb => cb.checked);
+        if (checkboxesChecked.length === 0) {
+            erreurs.push('- Veuillez indiquer si vous avez plus de 18 ans');
+        } else if (checkboxesChecked.length > 1) {
+            erreurs.push('- Veuillez cocher une seule option (Oui OU Non)');
+        }
+
+        if (erreurs.length > 0) {
+            alert('Erreurs dans le formulaire :\n\n' + erreurs.join('\n'));
+        } else {
+            alert('✅ Formulaire soumis avec succès !\n\nMerci ' + prenom + ' ' + nom + ' pour votre inscription !');
+            form.reset();
+        }
+    });
+
+    // ===== 3. GESTION DES CHECKBOXES (Une seule à la fois) =====
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox, index) => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                checkboxes.forEach((cb, i) => {
+                    if (i !== index) cb.checked = false;
+                });
+            }
+        });
+    });
+
+    // ===== 4. ANIMATION D'APPARITION AU SCROLL =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Applique l'animation à tous les divs
+    document.querySelectorAll('div').forEach(div => {
+        div.style.opacity = '0';
+        div.style.transform = 'translateY(50px)';
+        div.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(div);
+    });
+
+    // ===== 5. EFFET HOVER SUR LES IMAGES DE PRODUITS =====
+    const productImages = document.querySelectorAll('#nos\\ articles img');
+    productImages.forEach(img => {
+        img.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+        img.style.borderRadius = '10px';
+
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 10px 30px rgba(0, 191, 255, 0.5)';
+        });
+
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+        });
+    });
+
+    // ===== 6. BOUTON RETOUR EN HAUT =====
+    // Création du bouton
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.innerHTML = '↑';
+    backToTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #00bfff;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+`;
+    document.body.appendChild(backToTopBtn);
+
+    // ===== VALIDATION NOM ET PRÉNOM (LETTRES UNIQUEMENT) =====
+
+    // Sélection des champs nom et prénom
+    const nomInput = document.querySelectorAll('input[type="text"]')[0];
+    const prenomInput = document.querySelectorAll('input[type="text"]')[1];
+
+    // Fonction pour valider et filtrer les caractères
+    function validerLettresUniquement(input) {
+        input.addEventListener('input', function(e) {
+            // Remplace tout ce qui n'est pas une lettre, espace, trait d'union ou apostrophe
+            // Permet aussi les lettres accentuées (é, è, à, ô, etc.)
+            let value = e.target.value;
+
+            // Supprime les chiffres et caractères spéciaux non autorisés
+            let filteredValue = value.replace(/[^a-zA-ZÀ-ÿ\s\-']/g, '');
+
+            // Met à jour la valeur si elle a changé
+            if (value !== filteredValue) {
+                e.target.value = filteredValue;
+            }
+        });
+
+        // Validation supplémentaire sur le blur (quand l'utilisateur quitte le champ)
+        input.addEventListener('blur', function(e) {
+            // Trim les espaces en début et fin
+            e.target.value = e.target.value.trim();
+
+            // Capitalise la première lettre de chaque mot
+            e.target.value = e.target.value
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+        });
+
+        // Empêche le copier-coller de contenu invalide
+        input.addEventListener('paste', function(e) {
+            e.preventDefault();
+
+            // Récupère le texte collé
+            let pasteData = (e.clipboardData || window.clipboardData).getData('text');
+
+            // Filtre pour garder uniquement les lettres
+            let cleanedData = pasteData.replace(/[^a-zA-ZÀ-ÿ\s\-']/g, '');
+
+            // Insère le texte nettoyé
+            document.execCommand('insertText', false, cleanedData);
+        });
+    }
+
+    // Applique la validation aux deux champs
+    validerLettresUniquement(nomInput);
+    validerLettresUniquement(prenomInput);
+
+    // Ajoute des attributs HTML5 pour validation supplémentaire
+    nomInput.setAttribute('pattern', '[a-zA-ZÀ-ÿ\\s\\-\']+');
+    nomInput.setAttribute('title', 'Le nom ne doit contenir que des lettres');
+    prenomInput.setAttribute('pattern', '[a-zA-ZÀ-ÿ\\s\\-\']+');
+    prenomInput.setAttribute('title', 'Le prénom ne doit contenir que des lettres');
+
+    // Message d'erreur visuel (optionnel)
+    function afficherErreur(input, message) {
+        // Crée un élément d'erreur s'il n'existe pas
+        let erreurExistante = input.parentElement.querySelector('.erreur-validation');
+
+        if (!erreurExistante) {
+            let erreurDiv = document.createElement('span');
+            erreurDiv.className = 'erreur-validation';
+            erreurDiv.style.cssText = `
+            color: #ff6b6b;
+            font-size: 0.85em;
+            display: block;
+            margin-top: 5px;
+        `;
+            erreurDiv.textContent = message;
+            input.parentElement.appendChild(erreurDiv);
+
+            // Change la bordure du champ en rouge
+            input.style.borderColor = '#ff6b6b';
+
+            // Supprime l'erreur après 3 secondes
+            setTimeout(() => {
+                erreurDiv.remove();
+                input.style.borderColor = '#00bfff';
+            }, 3000);
+        }
+    }
+
+    // Validation lors de la tentative d'entrée de chiffres
+    nomInput.addEventListener('input', function(e) {
+        if (/\d/.test(e.target.value)) {
+            afficherErreur(this, '⚠️ Le nom ne peut pas contenir de chiffres');
+        }
+    });
+
+    prenomInput.addEventListener('input', function(e) {
+        if (/\d/.test(e.target.value)) {
+            afficherErreur(this, '⚠️ Le prénom ne peut pas contenir de chiffres');
+        }
+    });
+
+    // Afficher/masquer selon le scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.opacity = '1';
+            backToTopBtn.style.visibility = 'visible';
+        } else {
+            backToTopBtn.style.opacity = '0';
+            backToTopBtn.style.visibility = 'hidden';
+        }
+    });
+
+    // Action du bouton
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    backToTopBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+
+    backToTopBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+
+    // ===== 7. MESSAGE DE BIENVENUE =====
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            console.log('🎉 Bienvenue sur FKST_tech !');
+        }, 500);
+    });
+
+    // ===== 8. COMPTEUR DE VISITEURS (simulation) =====
+    let visitorCount = Number(localStorage.getItem('visitorCount')) || 0;
+    visitorCount++;
+    localStorage.setItem('visitorCount', visitorCount);
+
+    // Affiche le compteur dans le footer
+    const footer = document.querySelector('footer');
+    const visitorDisplay = document.createElement('p');
+    visitorDisplay.textContent = '👥 Visiteur n°' + visitorCount;
+    visitorDisplay.style.fontSize = '0.9em';
+    visitorDisplay.style.marginTop = '10px';
+    footer.appendChild(visitorDisplay);
+
+    // ===== 7. ANIMATION FLUIDE DU LOGO AVEC MESSAGES DE MOTIVATION =====
+    const logo = document.querySelector('.logo img');
+    const logoSection = document.querySelector('.logo');
+    const logoContainer = document.querySelector('.logo-container');
+
+    // Messages de motivation sur la tech
+    const motivationMessages = [
+        "💡 L'innovation commence ici",
+        "🚀 La technologie change tout",
+        "⚡ Connectez-vous au futur",
+        "🌟 Votre succès numérique",
+        "🎯 Excellence technologique",
+        "💻 Créez votre avenir digital",
+        "✨ La tech à portée de main",
+        "🔥 Propulsez vos ambitions",
+        "🌐 Un monde de possibilités",
+        "⭐ Transformez vos idées"
+    ];
+
+    let isAnimating = false;
+    let motivationTimeout;
+
+    // Animation de respiration au chargement
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            logo.classList.add('breathing');
+            console.log('🎉 Bienvenue sur FKST_tech !');
+
+            // Lance l'animation après 2 secondes
+            setTimeout(startMotivationAnimation, 2000);
+        }, 500);
+    });
+
+    // Fonction principale d'animation
+    function startMotivationAnimation() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // Déplace le logo vers la droite
+        logoSection.classList.add('move-right');
+
+        // Attends que le logo soit en position
+        setTimeout(() => {
+            showMotivationMessages(0);
+        }, 1000);
+    }
+
+    // Affiche les messages un par un
+    function showMotivationMessages(index) {
+        if (index >= motivationMessages.length) {
+            // Tous les messages sont passés, ramène le logo au centre
+            setTimeout(() => {
+                logoSection.classList.remove('move-right');
+
+                // Réactive l'animation breathing et réinitialise la couleur
+                logo.classList.add('breathing');
+                logo.style.filter = '';
+
+                // Attends que le logo revienne avant de réinitialiser
+                setTimeout(() => {
+                    isAnimating = false;
+
+                    // Relance l'animation après 10 secondes
+                    motivationTimeout = setTimeout(startMotivationAnimation, 10000);
+                }, 1200);
+            }, 500);
+            return;
+        }
+
+        // Désactive l'animation breathing pendant le changement de couleur
+        logo.classList.remove('breathing');
+
+        // Couleurs pour le logo et les mots
+        const logoColors = [
+            'drop-shadow(0 8px 30px rgba(255, 107, 107, 1))', // Rouge vif
+            'drop-shadow(0 8px 30px rgba(254, 202, 87, 1))', // Jaune
+            'drop-shadow(0 8px 30px rgba(72, 219, 251, 1))', // Cyan
+            'drop-shadow(0 8px 30px rgba(255, 159, 243, 1))', // Rose
+            'drop-shadow(0 8px 30px rgba(106, 255, 150, 1))', // Vert
+            'drop-shadow(0 8px 30px rgba(168, 85, 247, 1))', // Violet
+            'drop-shadow(0 8px 30px rgba(251, 146, 60, 1))', // Orange
+            'drop-shadow(0 8px 30px rgba(34, 211, 238, 1))', // Bleu clair
+            'drop-shadow(0 8px 30px rgba(244, 114, 182, 1))', // Rose fuchsia
+            'drop-shadow(0 8px 30px rgba(132, 204, 22, 1))' // Lime
+        ];
+
+        const textGradients = [
+            'linear-gradient(135deg, #ff6b6b, #ee5a6f)', // Rouge
+            'linear-gradient(135deg, #feca57, #ff9ff3)', // Jaune-Rose
+            'linear-gradient(135deg, #48dbfb, #0abde3)', // Cyan
+            'linear-gradient(135deg, #ff9ff3, #feca57)', // Rose-Jaune
+            'linear-gradient(135deg, #6aff96, #10ac84)', // Vert
+            'linear-gradient(135deg, #a855f7, #7c3aed)', // Violet
+            'linear-gradient(135deg, #fb923c, #f97316)', // Orange
+            'linear-gradient(135deg, #22d3ee, #06b6d4)', // Bleu clair
+            'linear-gradient(135deg, #f472b6, #ec4899)', // Fuchsia
+            'linear-gradient(135deg, #84cc16, #65a30d)' // Lime
+        ];
+
+        const textShadows = [
+            'drop-shadow(0 0 25px rgba(255, 107, 107, 0.8))', // Rouge
+            'drop-shadow(0 0 25px rgba(254, 202, 87, 0.8))', // Jaune
+            'drop-shadow(0 0 25px rgba(72, 219, 251, 0.8))', // Cyan
+            'drop-shadow(0 0 25px rgba(255, 159, 243, 0.8))', // Rose
+            'drop-shadow(0 0 25px rgba(106, 255, 150, 0.8))', // Vert
+            'drop-shadow(0 0 25px rgba(168, 85, 247, 0.8))', // Violet
+            'drop-shadow(0 0 25px rgba(251, 146, 60, 0.8))', // Orange
+            'drop-shadow(0 0 25px rgba(34, 211, 238, 0.8))', // Bleu clair
+            'drop-shadow(0 0 25px rgba(244, 114, 182, 0.8))', // Fuchsia
+            'drop-shadow(0 0 25px rgba(132, 204, 22, 0.8))' // Lime
+        ];
+
+        // Change la couleur du logo
+        logo.style.filter = logoColors[index % logoColors.length];
+
+        // Crée le message avec la couleur correspondante
+        const messageEl = document.createElement('div');
+        messageEl.className = 'motivation-text';
+        messageEl.textContent = motivationMessages[index];
+        messageEl.style.background = textGradients[index % textGradients.length];
+        messageEl.style.backgroundSize = '300% 300%';
+        messageEl.style.webkitBackgroundClip = 'text';
+        messageEl.style.webkitTextFillColor = 'transparent';
+        messageEl.style.backgroundClip = 'text';
+        messageEl.style.filter = textShadows[index % textShadows.length];
+        logoContainer.appendChild(messageEl);
+
+        // Déclenche l'animation
+        setTimeout(() => {
+            messageEl.classList.add('show');
+        }, 50);
+
+        // Supprime le message et passe au suivant
+        setTimeout(() => {
+            messageEl.remove();
+            showMotivationMessages(index + 1);
+        }, 3000);
+    }
+
+    // Crée le message
+    const messageEl = document.createElement('div');
+    messageEl.className = 'motivation-text';
+    messageEl.textContent = motivationMessages[index];
+    logoContainer.appendChild(messageEl);
+
+    // Déclenche l'animation
+    setTimeout(() => {
+        messageEl.classList.add('show');
+    }, 50);
+
+    // Supprime le message et passe au suivant
+    setTimeout(() => {
+        messageEl.remove();
+        showMotivationMessages(index + 1);
+    }, 3000);
+
+
+    // Effet de parallaxe 3D fluide au mouvement de la souris
+    logoSection.addEventListener('mousemove', function(e) {
+        if (isAnimating) return; // Désactive le parallaxe pendant l'animation
+
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        logo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.05)`;
+    });
+
+    // Réinitialise la position au départ de la souris
+    logoSection.addEventListener('mouseleave', function() {
+        if (!isAnimating) {
+            logo.style.transform = '';
+        }
+    });
+
+    // Effet d'ondulation au clic (ripple effect)
+    logo.addEventListener('click', function(e) {
+        // Arrête l'animation de respiration temporairement
+        this.classList.remove('breathing');
+
+        // Si une animation de motivation est en cours, la relance
+        if (isAnimating) {
+            clearTimeout(motivationTimeout);
+            logoSection.classList.remove('move-right');
+            const existingMessages = logoContainer.querySelectorAll('.motivation-text');
+            existingMessages.forEach(msg => msg.remove());
+            isAnimating = false;
+
+            setTimeout(() => {
+                this.classList.add('breathing');
+                startMotivationAnimation();
+            }, 500);
+            return;
+        }
+
+        // Crée l'effet d'ondulation
+        const ripple = document.createElement('div');
+        const rect = this.getBoundingClientRect();
+
+        ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(0, 191, 255, 0.6);
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        z-index: 10;
+        left: ${e.clientX - rect.left}px;
+        top: ${e.clientY - rect.top}px;
+        transform: translate(-50%, -50%) scale(0);
+        animation: ripple 0.8s ease-out;
+    `;
+
+        logoSection.style.position = 'relative';
+        logoSection.appendChild(ripple);
+
+        // Style de l'animation ripple
+        if (!document.querySelector('#ripple-style')) {
+            const style = document.createElement('style');
+            style.id = 'ripple-style';
+            style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: translate(-50%, -50%) scale(15);
+                    opacity: 0;
+                }
+            }
+        `;
+            document.head.appendChild(style);
+        }
+
+        // Supprime l'ondulation après l'animation
+        setTimeout(() => {
+            ripple.remove();
+            this.classList.add('breathing');
+        }, 800);
+
+        // Petit feedback visuel
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+
+        // Lance l'animation de motivation
+        clearTimeout(motivationTimeout);
+        setTimeout(startMotivationAnimation, 1000);
+    });
+
+    // Effet de particules brillantes subtiles
+    function createSparkle() {
+        if (!logoSection.matches(':hover') || isAnimating) return;
+
+        const sparkle = document.createElement('div');
+        const rect = logoSection.getBoundingClientRect();
+
+        const x = Math.random() * rect.width;
+        const y = Math.random() * rect.height;
+        const size = Math.random() * 4 + 2;
+
+        sparkle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        left: ${x}px;
+        top: ${y}px;
+        z-index: 20;
+        opacity: 0;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        animation: sparkle-fade 1.5s ease-out;
+    `;
+
+        logoSection.appendChild(sparkle);
+
+        if (!document.querySelector('#sparkle-style')) {
+            const style = document.createElement('style');
+            style.id = 'sparkle-style';
+            style.textContent = `
+            @keyframes sparkle-fade {
+                0% { opacity: 0; transform: translateY(0) scale(0); }
+                20% { opacity: 1; transform: translateY(-5px) scale(1); }
+                100% { opacity: 0; transform: translateY(-20px) scale(0); }
+            }
+        `;
+            document.head.appendChild(style);
+        }
+
+        setTimeout(() => sparkle.remove(), 1500);
+    }
+
+    // Active les particules au survol
+    let sparkleInterval;
+    logoSection.addEventListener('mouseenter', function() {
+        if (!isAnimating) {
+            sparkleInterval = setInterval(createSparkle, 300);
+        }
+    });
+
+    logoSection.addEventListener('mouseleave', function() {
+        clearInterval(sparkleInterval);
+    });
+</script>
+
+</html>
